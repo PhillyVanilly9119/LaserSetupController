@@ -1,7 +1,7 @@
 """
                                     ******
     Author:     P. Matten & G. Giardina
-    Contact:    philipp.matten@meduniwien.ac.at & gabriel.giardina@meduniwien.ac.at
+    Contact:    philipp.matten@gmail.com & gabriel.giardina@meduniwien.ac.at
                                     ******
                                          
         >>> main file for Laser Setup GUI creation, methods and handling     
@@ -16,15 +16,19 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 import matplotlib.animation as animation
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-# custom imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'src')))
+# custom imports
 from spectrometerreadout import SpectrometerReadOuts
+from i2cbus import SMBusWrapper
+from steppermotor import StepperMotor
 
 
 class UiWindowDialog(object):
     
     def __init__(self) -> None:
         self.Spec = SpectrometerReadOuts()
+        self.Motor = StepperMotor()
+        self.I2C = SMBusWrapper()
         
     def setupUi(self, mainWindow_Dialog):
         mainWindow_Dialog.setObjectName("mainWindow_Dialog")
