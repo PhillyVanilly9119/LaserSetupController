@@ -133,27 +133,27 @@ class SMBusWrapper():
 
 #### -> WHAT THE FUCK DO YOU WANT HERE????
 
-#let's parse in decimal
-mask_last_4digits = 0b00001111
-most_significant_bytes 	= []
-least_significant_bytes = []
-num_12_bits 			= []
+# ~ #let's parse in decimal
+# ~ mask_last_4digits = 0b00001111
+# ~ most_significant_bytes 	= []
+# ~ least_significant_bytes = []
+# ~ num_12_bits 			= []
 
-# a = data_readout
+# ~ # a = data_readout
 
-for k in range(0,len(a)):
-	if k%2:	#odd numbered elements
-		least_significant_bytes.append(a[k])
-		print(bin(a[k]))
-	else :	#even numbered elements, starting with 0
-		b = (a[k] & mask_last_4digits)<<8
-		most_significant_bytes.append(b)
-		print(bin(b))
+# ~ for k in range(0,len(a)):
+	# ~ if k%2:	#odd numbered elements
+		# ~ least_significant_bytes.append(a[k])
+		# ~ print(bin(a[k]))
+	# ~ else :	#even numbered elements, starting with 0
+		# ~ b = (a[k] & mask_last_4digits)<<8
+		# ~ most_significant_bytes.append(b)
+		# ~ print(bin(b))
 
-for l in range(0,len(most_significant_bytes)):
-	num_12_bits.append(most_significant_bytes[l]+least_significant_bytes[l])
+# ~ for l in range(0,len(most_significant_bytes)):
+	# ~ num_12_bits.append(most_significant_bytes[l]+least_significant_bytes[l])
 
-print(num_12_bits)
+# ~ print(num_12_bits)
 
-for l in num_12_bits:
-	print(bin_in_2volt(l))
+# ~ for l in num_12_bits:
+	# ~ print(bin_in_2volt(l))

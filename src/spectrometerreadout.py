@@ -18,7 +18,7 @@ class SpectrometerReadOuts():
         device_list = list_devices() # a = list_devices()
         if device_list is None:
             print("[ERROR:] Did not find a device (Specrometer)")
-        if len(device_list > 1):
+        if len(device_list) > 1:
             print("[INFO:] Found more than one connected device")
         self.handle_spectrometer = Spectrometer(device_list[0]) # spec = Spectrometer(a[0])
         

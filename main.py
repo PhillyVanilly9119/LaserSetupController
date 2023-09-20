@@ -16,11 +16,12 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg
 import matplotlib.animation as animation
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'src')))
+print(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'src')))
 # custom imports
-from spectrometerreadout import SpectrometerReadOuts
 from i2cbus import SMBusWrapper
 from steppermotor import StepperMotor
+from spectrometerreadout import SpectrometerReadOuts
 
 
 class UiWindowDialog(object):
